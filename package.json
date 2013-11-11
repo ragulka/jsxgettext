@@ -8,7 +8,7 @@
     "url": "git://github.com/zaach/jsxgettext.git"
   },
   "main": "lib/jsxgettext.js",
-  "bin": "lib/cli.js",
+  "bin": "bin/jsgettext.js",
   "preferGlobal": true,
   "dependencies": {
     "escodegen": "~0.0.28",

@@ -1,7 +1,3 @@
-// TODO figure out why 
-// exports['test join_existing'] = require('./join_existing');
-// doesn't work
-
 exports.testAll = {};
 exports.testAll['test creation date'] = require('./creation_date');
 exports.testAll['test join_existing'] = require('./join_existing')['we gettext from first file'];

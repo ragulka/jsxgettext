@@ -17,7 +17,7 @@ exports['test quotes and newlines when folding msgid'] = function (assert, cb) {
     assert.ok(result.indexOf('\nmsgid "Hello \\"World\\"\\n"\n')>=0, 'short line');
 
     // long folded line should also get escaped
-    assert.ok(result.indexOf('\n"This is a long string with \\"quotes\\", newlines \\n and such. The line should get "\n')>=0, 'long folded line');
+    assert.ok(result.indexOf('\n"This is a long string with \\"quotes\\", newlines \\n"\n" and such. The line should get folded"\n')>=0, 'long folded line');
 
     cb();
   });

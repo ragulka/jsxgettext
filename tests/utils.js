@@ -5,7 +5,7 @@ exports.compareResultWithFile = function (result, filePath, assert, cb, msg) {
   result = result.slice(result.indexOf('\n\n') + 2);
 
   fs.readFile(filePath, function (err, source) {
-    assert.equal(result, source.toString('utf8'), msg || 'Results match.');
+    assert.equal(result.trim(), source.toString('utf8').trim(), msg || 'Results match.');
     cb();
   });
 };

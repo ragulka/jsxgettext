@@ -11,11 +11,13 @@
   "bin": "lib/cli.js",
   "preferGlobal": true,
   "dependencies": {
-    "escodegen": "0.0.23",
-    "esprima": "1.0.3",
-    "estraverse": "1.1.2-1",
+    "escodegen": "~0.0.28",
+    "esprima": "~1.0.4",
+    "estraverse": "~1.4.0",
     "nomnom": "1.5.2",
-    "jade": "0.30.0"
+    "jade": "0.30.0",
+    "gettext-parser": "~0.1.9",
+    "lodash": "~2.2.1"
   },
   "devDependencies": {
     "test": "*"

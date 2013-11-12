@@ -20,13 +20,13 @@
     "lodash": "~2.2.1"
   },
   "devDependencies": {
-    "test": "*"
+    "nodeunit": "*"
   },
   "optionalDependencies": {},
   "engines": {
     "node": "*"
   },
   "scripts": {
-    "test": "node tests/all.js"
+    "test": "nodeunit tests/"
   }
 }

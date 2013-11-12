@@ -1,11 +1,8 @@
-var fs = require('fs');
+var assert = require('nodeunit').assert;
 
-exports.compareResultWithFile = function (result, filePath, assert, cb, msg) {
+assert.isEqualToPO = function (result, expected) {
   // Ignore the header
   result = result.slice(result.indexOf('\n\n') + 2);
 
-  fs.readFile(filePath, function (err, source) {
-    assert.equal(result.trim(), source.toString('utf8').trim(), msg || 'Results match.');
-    cb();
-  });
+  assert.equal(result.trim(), expected.trim(), 'Results match.');
 };

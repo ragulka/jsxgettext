@@ -1,23 +1,20 @@
-var
-fs = require('fs'),
-jsxgettext = require('../lib/jsxgettext'),
-utils = require('./utils'),
-path = require('path');
+var fs = require('fs'),
+    jsxgettext = require('..'),
+    utils = require('./utils');
 
-exports['test results should be alphabetically sorted when sort is true'] = function (assert, cb) {
-  var inputFilename = path.join(__dirname, 'inputs', 'sorted.js');
-  fs.readFile(inputFilename, "utf8", function (err, source) {
-    var opts = {sort: true},
-        sources = {'inputs/sorted.js': source},
-        result = jsxgettext.generate(sources, opts);
-    assert.equal(typeof result, 'string', 'result is a string');
-    assert.ok(result.length > 0, 'result is not empty');
+module.exports["Sort output"] = {
+    setUp: function(callback){
+        this.po = fs.readFileSync(__dirname + "/fixtures/pot/sorted.pot", "utf8");
+        this.source = fs.readFileSync(__dirname + "/fixtures/javascript/sorted.js", "utf8");
+        callback();
+    },
 
-    var outputFilename = path.join(__dirname, 'outputs',
-                                  'sorted.pot');
+    extract: function(test){
+        var result = jsxgettext.extract({
+          'fixtures/javascript/sorted.js' : this.source
+        }, { 'sort-output': true });
 
-    utils.compareResultWithFile(result, outputFilename, assert, cb);
-  });
-};
-
-if (module == require.main) require('test').run(exports);
+        test.isEqualToPO(result, this.po);
+        test.done();
+    }
+}

@@ -1,4 +1,4 @@
-#: inputs/anonymous_functions.js:9
+#: fixtures/javascript/anonymous-functions.js:9
 msgid "I'm gonna get translated, yay!"
 msgstr ""
 

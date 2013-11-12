@@ -1,4 +1,4 @@
-#: inputs/expressions.js:4
+#: fixtures/javascript/expressions.js:4
 msgid "Confirm email address for Persona"
 msgstr ""
 
